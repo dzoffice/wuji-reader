@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">wj-ink</string>
+    <string name="tab_novel">小说</string>
+    <string name="tab_comic">漫画</string>
+    <string name="tab_news">新闻</string>
+    <string name="news_title">新闻热榜</string>
+    <string name="back">返回</string>
+    <string name="tab_shelf">书架</string>
+    <string name="search_hint">搜索书名 / 作者</string>
+    <string name="search">搜索</string>
+    <string name="loading">加载中…</string>
+    <string name="empty">暂无内容</string>
+    <string name="chapters">目录</string>
+    <string name="read">开始阅读</string>
+</resources>

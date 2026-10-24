@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ink_white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="72dp"
+            android:layout_height="match_parent"
+            android:background="@color/ink_white"
+            android:text="返回"
+            android:textColor="@color/ink_black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:paddingStart="12dp"
+            android:text="设置"
+            android:textColor="@color/ink_black"
+            android:textSize="17sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/ink_line" />
+
+    <!-- 九宫格布局入口（核心） -->
+    <Button
+        android:id="@+id/btnNineGrid"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:background="@color/ink_white"
+        android:gravity="left|center_vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:text="九宫格布局设置"
+        android:textColor="@color/ink_black"
+        android:textSize="17sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/ink_line" />
+
+    <!-- 界面字号（全局）：影响书源名/书名/简介/目录/新闻/漫画/菜单等全部文字 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:paddingStart="20dp"
+            android:text="界面字号（全局）"
+            android:textColor="@color/ink_black"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/tvUiFontValue"
+            android:layout_width="96dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="@color/ink_gray"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btnUiFontMinus"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:background="@color/ink_white"
+            android:text="A-"
+            android:textColor="@color/ink_black"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btnUiFontPlus"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:background="@color/ink_white"
+            android:text="A+"
+            android:textColor="@color/ink_black"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/ink_line" />
+
+    <!-- 正文字号 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:paddingStart="20dp"
+            android:text="正文字号"
+            android:textColor="@color/ink_black"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/tvFontValue"
+            android:layout_width="96dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="@color/ink_gray"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btnFontMinus"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:background="@color/ink_white"
+            android:text="A-"
+            android:textColor="@color/ink_black"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btnFontPlus"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:background="@color/ink_white"
+            android:text="A+"
+            android:textColor="@color/ink_black"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/ink_line" />
+
+    <!-- 阅读背景色 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:paddingStart="20dp"
+            android:text="阅读背景色"
+            android:textColor="@color/ink_black"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/tvBgValue"
+            android:layout_width="96dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="@color/ink_gray"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btnBg"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:background="@color/ink_white"
+            android:text="选择"
+            android:textColor="@color/ink_black"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/ink_line" />
+
+    <Button
+        android:id="@+id/btnAbout"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:background="@color/ink_white"
+        android:gravity="left|center_vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:text="关于本软件"
+        android:textColor="@color/ink_black"
+        android:textSize="17sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/ink_line" />
+</LinearLayout>

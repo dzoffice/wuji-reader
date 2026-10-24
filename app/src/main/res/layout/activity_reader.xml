@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/readerRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ink_white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="72dp"
+            android:layout_height="match_parent"
+            android:background="@color/ink_white"
+            android:text="返回"
+            android:textColor="@color/ink_black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:paddingEnd="12dp"
+            android:textColor="@color/ink_black"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/ink_line" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <com.wuji.reader.ui.ObservableScrollView
+            android:id="@+id/scroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="8dp"
+                    android:paddingStart="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingEnd="36dp"
+                    android:paddingBottom="16dp"
+                    android:textColor="@color/ink_black"
+                    android:textSize="19sp" />
+
+                <!-- 相关报道：抓不到正文时列出，每条可点开；小说/漫画恒为 GONE -->
+                <LinearLayout
+                    android:id="@+id/relatedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="36dp"
+                    android:paddingBottom="16dp"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </com.wuji.reader.ui.ObservableScrollView>
+
+        <!-- 可拖拽滚动条：视觉上只在最右侧画 6dp 黑色滑块，热区 28dp -->
+        <com.wuji.reader.ui.FastScrollBar
+            android:id="@+id/fastBar"
+            android:layout_width="28dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="end" />
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/ink_line" />
+
+    <!--
+      底部按钮栏：6+1 个按钮 weight=1 均分。
+      横屏（1920x1080 / 1280x800 宽扁比例）下 match_parent 会把每个按钮拉到
+      130-160dp，短文字配巨型按钮视觉失真。加 maxWidth=640dp 上限 + 居中：
+      竖屏（<=640dp）与原来完全一致，横屏超宽时按钮栏整体收窄居中，不新建 layout-land。
+    -->
+    <LinearLayout
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_gravity="center"
+        android:maxWidth="640dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnPrev"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/ink_white"
+            android:text="上一章"
+            android:textColor="@color/ink_black"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/btnFontDown"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/ink_white"
+            android:text="A-"
+            android:textColor="@color/ink_black"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btnAuto"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/ink_white"
+            android:text="自动滚动"
+            android:textColor="@color/ink_black"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/btnFontUp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/ink_white"
+            android:text="A+"
+            android:textColor="@color/ink_black"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/ink_white"
+            android:text="下一章"
+            android:textColor="@color/ink_black"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/btnMenu"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/ink_white"
+            android:text="菜单"
+            android:textColor="@color/ink_black"
+            android:textSize="15sp" />
+
+        <!-- 摘要加长：仅新闻打不开原网页时显示，每点一次多聚合 3 条摘要 -->
+        <Button
+            android:id="@+id/btnExtend"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/ink_white"
+            android:text="摘要+"
+            android:textColor="@color/ink_black"
+            android:textSize="15sp"
+            android:visibility="gone" />
+    </LinearLayout>
+</LinearLayout>

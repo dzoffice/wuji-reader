@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ink_white"
+    android:orientation="vertical">
+
+    <!-- 顶层切换：小说 / 漫画 / 新闻（新闻为跳板，点击进 NewsActivity） -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/tabNovel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/ink_white"
+            android:text="@string/tab_novel"
+            android:textColor="@color/ink_black"
+            android:textSize="17sp" />
+
+        <Button
+            android:id="@+id/tabComic"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/ink_white"
+            android:text="@string/tab_comic"
+            android:textColor="@color/ink_black"
+            android:textSize="17sp" />
+
+        <Button
+            android:id="@+id/tabNews"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/ink_white"
+            android:text="@string/tab_news"
+            android:textColor="@color/ink_black"
+            android:textSize="17sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/ink_line" />
+
+    <!-- 搜索行（在源行之上）：书架 / 关键词 / 全局开关 / 搜索 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnShelf"
+            android:layout_width="64dp"
+            android:layout_height="match_parent"
+            android:background="@color/ink_white"
+            android:text="书架"
+            android:textColor="@color/ink_black"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btnSettings"
+            android:layout_width="64dp"
+            android:layout_height="match_parent"
+            android:background="@color/ink_white"
+            android:text="设置"
+            android:textColor="@color/ink_black"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editSearch"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/ink_white"
+            android:hint="@string/search_hint"
+            android:imeOptions="actionSearch"
+            android:paddingStart="12dp"
+            android:singleLine="true"
+            android:textColor="@color/ink_black"
+            android:textColorHint="@color/ink_gray"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btnGlobal"
+            android:layout_width="72dp"
+            android:layout_height="match_parent"
+            android:background="@color/ink_white"
+            android:text="全局"
+            android:textColor="@color/ink_black"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btnSearch"
+            android:layout_width="88dp"
+            android:layout_height="match_parent"
+            android:background="@color/ink_black"
+            android:text="@string/search"
+            android:textColor="@color/ink_white"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <!-- 源切换：「源管理」固定在行首（不随源横滑滚走），源 chips 在后面横滑 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnSourceManage"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:minWidth="92dp"
+            android:background="@color/ink_white"
+            android:text="源管理"
+            android:textColor="@color/ink_black"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/ink_line" />
+
+        <HorizontalScrollView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:id="@+id/sourceRow"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal" />
+        </HorizontalScrollView>
+    </LinearLayout>
+
+    <!-- 分类标签 -->
+    <HorizontalScrollView
+        android:id="@+id/typeScroll"
+        android:layout_width="match_parent"
+        android:layout_height="52dp">
+
+        <LinearLayout
+            android:id="@+id/typeRow"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" />
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="6dp"
+        android:text="@string/loading"
+        android:textColor="@color/ink_gray"
+        android:textSize="14sp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- 翻页 -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/ink_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnPrev"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/ink_white"
+            android:text="上一页"
+            android:textColor="@color/ink_black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/pageInfo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@color/ink_black"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/ink_white"
+            android:text="下一页"
+            android:textColor="@color/ink_black"
+            android:textSize="16sp" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,18 @@
+*.iml
+.gradle/
+local.properties
+.idea/
+.DS_Store
+build/
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+dist/
+
+# ---- 发布辅助脚本与日志（不入库，参考 qrpeek 模式）----
+/publish.bat
+/_publish.log
+
+# ---- QA 测试过程产物（logcat/截图/日志，不入库）----
+/qa/

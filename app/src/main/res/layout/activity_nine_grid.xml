@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ink_white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="72dp"
+            android:layout_height="match_parent"
+            android:background="@color/ink_white"
+            android:text="返回"
+            android:textColor="@color/ink_black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:paddingStart="12dp"
+            android:text="九宫格布局"
+            android:textColor="@color/ink_black"
+            android:textSize="17sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/ink_line" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:text="点格子设置该区域的功能，默认：左上=清屏，上中/右上=阅读菜单，左下=上一章，中下=目录，右下=下一页。"
+        android:textColor="@color/ink_gray"
+        android:textSize="14sp" />
+
+    <!-- 3×3 网格：整行等高，格子够大才好点（墨水屏） -->
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="10dp"
+        android:stretchColumns="0,1,2">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/cell0"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_weight="1"
+                android:background="@color/ink_white"
+                android:text="左上"
+                android:textColor="@color/ink_black"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/cell1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_weight="1"
+                android:background="@color/ink_white"
+                android:text="上中"
+                android:textColor="@color/ink_black"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/cell2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_weight="1"
+                android:background="@color/ink_white"
+                android:text="右上"
+                android:textColor="@color/ink_black"
+                android:textSize="15sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/cell3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_weight="1"
+                android:background="@color/ink_white"
+                android:text="左中"
+                android:textColor="@color/ink_black"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/cell4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_weight="1"
+                android:background="@color/ink_white"
+                android:text="正中"
+                android:textColor="@color/ink_black"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/cell5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_weight="1"
+                android:background="@color/ink_white"
+                android:text="右中"
+                android:textColor="@color/ink_black"
+                android:textSize="15sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/cell6"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_weight="1"
+                android:background="@color/ink_white"
+                android:text="左下"
+                android:textColor="@color/ink_black"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/cell7"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_weight="1"
+                android:background="@color/ink_white"
+                android:text="下中"
+                android:textColor="@color/ink_black"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/cell8"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_weight="1"
+                android:background="@color/ink_white"
+                android:text="右下"
+                android:textColor="@color/ink_black"
+                android:textSize="15sp" />
+        </TableRow>
+    </TableLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/ink_line" />
+
+    <Button
+        android:id="@+id/btnReset"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@color/ink_white"
+        android:text="恢复默认布局"
+        android:textColor="@color/ink_black"
+        android:textSize="16sp" />
+</LinearLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 滚动条轨道：白底，与正文背景一致，只给滑块一个明确的滑动范围 -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/ink_white" />
+    <size android:width="6dp" />
+</shape>

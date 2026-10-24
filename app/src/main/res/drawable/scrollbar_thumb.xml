@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 正文滚动条滑块：纯黑实心，白底上高对比可见。
+     墨水屏刷新慢，系统默认的淡出式滚动条几乎看不到，故配 fadeScrollbars=false 常显 -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/ink_black" />
+    <corners android:radius="2dp" />
+    <size android:width="6dp" />
+</shape>

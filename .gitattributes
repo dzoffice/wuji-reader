@@ -1,0 +1,10 @@
+# 统一换行符：仓库内一律 LF，Windows 脚本保持 CRLF
+* text=auto eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# 二进制（禁止换行符转换）
+*.jar binary
+*.png binary
+*.webp binary
+*.ico binary

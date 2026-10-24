@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ink_white"
+    android:orientation="vertical">
+
+    <!-- 顶栏：返回 + 标题 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="72dp"
+            android:layout_height="match_parent"
+            android:background="@color/ink_white"
+            android:text="返回"
+            android:textColor="@color/ink_black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:text="源管理"
+            android:textColor="@color/ink_black"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/ink_line" />
+
+    <!-- 类别 chips：小说 / 漫画 / 新闻 -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="52dp">
+
+        <LinearLayout
+            android:id="@+id/chipRow"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" />
+    </HorizontalScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/ink_line" />
+
+    <!-- 操作行 1：重置 / 添加（粘贴 JSON 或链接） -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnReset"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/ink_white"
+            android:text="重置"
+            android:textColor="@color/ink_black"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/ink_line" />
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/ink_white"
+            android:text="添加"
+            android:textColor="@color/ink_black"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/ink_line" />
+
+    <!--
+      操作行 2：SAF 导入/导出（v0.20.0）。
+      SAF（ACTION_OPEN_DOCUMENT / ACTION_CREATE_DOCUMENT）不需要任何存储权限。
+      新闻榜没有自定义源，这三个按钮与「添加」一同在新闻模式隐藏。
+    -->
+    <LinearLayout
+        android:id="@+id/importExportRow"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnImportFile"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/ink_white"
+            android:text="从文件选"
+            android:textColor="@color/ink_black"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/ink_line" />
+
+        <Button
+            android:id="@+id/btnImportUrl"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/ink_white"
+            android:text="从网址导入"
+            android:textColor="@color/ink_black"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/ink_line" />
+
+        <Button
+            android:id="@+id/btnExport"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/ink_white"
+            android:text="导出全部"
+            android:textColor="@color/ink_black"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/ink_line" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+</LinearLayout>

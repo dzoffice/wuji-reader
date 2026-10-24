@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 墨水屏配色：纯黑白高对比，杜绝灰底与半透明 -->
+<resources>
+    <color name="ink_black">#FF000000</color>
+    <color name="ink_white">#FFFFFFFF</color>
+    <color name="ink_gray">#FF767676</color>
+    <color name="ink_line">#FF000000</color>
+    <color name="ink_paper">#FFFFFFFF</color>
+    <color name="ink_invert">#FF000000</color>
+    <color name="sel_tab">#FF000000</color>
+</resources>

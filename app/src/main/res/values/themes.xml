@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 墨水屏主题：无动画、无阴影、无纹波 -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@color/ink_white</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="colorPrimary">@color/ink_black</item>
+        <item name="colorPrimaryDark">@color/ink_black</item>
+        <item name="colorAccent">@color/ink_black</item>
+        <item name="android:textColorPrimary">@color/ink_black</item>
+    </style>
+</resources>
